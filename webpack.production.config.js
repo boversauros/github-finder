@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
@@ -10,7 +9,7 @@ module.exports = {
         filename: 'bundle.[contenthash].js',
         path: path.resolve(__dirname, './dist')
     },
-    mode: 'none',
+    mode: 'production',
     module: {
         rules: [
             {
@@ -44,7 +43,6 @@ module.exports = {
             template: 'src/index.hbs',
             description: 'Basic finder using githbu api'
         }),
-        new TerserPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles.[contenthash].css'
         }),
