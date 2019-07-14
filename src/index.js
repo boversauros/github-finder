@@ -1,10 +1,9 @@
-import Button from './components/Button'
+import SearchBar from './components/SearchBar'
 
+//create app element
 const app = document.querySelector('#app')
 
-// add button
-const button = new Button
-const SearchButton = button.render()
-SearchButton.innerHTML = 'search'
-
-app.appendChild(SearchButton)
+// add new search bar
+const searchBar = new SearchBar
+const seeker = searchBar.render()
+app.appendChild(seeker)
