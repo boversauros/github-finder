@@ -1,4 +1,5 @@
 import Button from '../Button'
+import githubApi from '../../github-api'
 
 // add button
 const button = new Button
@@ -10,7 +11,7 @@ class SearchBar {
 
     search() {
         const searchInput = document.querySelector('#search')
-        console.log(searchInput.value)
+        githubApi.searchUsers(searchInput.value)
     }
 
     render() {
