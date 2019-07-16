@@ -1,5 +1,5 @@
 import Button from '../Button'
-import githubApi from '../../github-api'
+import logic from '../../logic'
 
 // add button
 const button = new Button
@@ -9,13 +9,13 @@ SearchButton.innerHTML = 'search'
 class SearchBar {
     searchButton = SearchButton
 
-    search() {
+    searchGit() {
         const searchInput = document.querySelector('#search')
-        githubApi.searchUsers(searchInput.value)
+        logic.search(searchInput.value)
     }
 
     render() {
-        this.searchButton.addEventListener('click', this.search)
+        this.searchButton.addEventListener('click', this.searchGit)
 
         const searchinput = document.createElement('input')
         searchinput.setAttribute('type', 'text')
