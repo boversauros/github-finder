@@ -1,18 +1,13 @@
+'use strict'
 import Button from '../Button'
-import githubApi from '../../github-api'
-
-// add button
-const button = new Button
-const SearchButton = button.render()
-SearchButton.innerHTML = 'search'
 
 class SearchBar {
-    searchButton = SearchButton
-
-    search() {
-        const searchInput = document.querySelector('#search')
-        githubApi.searchUsers(searchInput.value)
+    constructor(func) {
+        this.search = func
     }
+
+    searchButton = new Button('search')
+    searchResults = []
 
     render() {
         this.searchButton.addEventListener('click', this.search)
