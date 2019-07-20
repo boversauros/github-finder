@@ -1,5 +1,5 @@
+'use strict'
 import Button from '../Button'
-import logic from '../../logic'
 
 class SearchBar {
     constructor(func) {
@@ -8,14 +8,6 @@ class SearchBar {
 
     searchButton = new Button('search')
     searchResults = []
-    searchGit() {
-        const searchInput = document.querySelector('#search')
-        logic.search(searchInput.value)
-            .then(res => {
-                this.searchResults = res
-
-            })
-    }
 
     render() {
         this.searchButton.addEventListener('click', this.search)

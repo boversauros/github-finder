@@ -1,10 +1,10 @@
 import './index.scss'
 
 function Button(name) {
-    this.buttonName = name
+    if (typeof name !== 'string') throw Error(`${name} is not a string `)
     const button = document.createElement('button')
     button.classList.add('button')
-    button.innerHTML = this.buttonName
+    button.innerHTML = name
     return button
 }
 
