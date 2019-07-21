@@ -7,7 +7,9 @@ const logic = {
         return searchType(text)
             .then(({ data: { items } }) => items)
             // TODO: Throw error on new versions
-            .catch(err => console.error(err))
+            .catch(err => {
+                throw Error(err.message)
+            })
     }
 }
 
