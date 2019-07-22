@@ -1,7 +1,9 @@
 'use strict'
-
-import SearchBar from './components/SearchBar'
 import logic from './logic'
+
+// compo
+import SearchBar from './components/SearchBar'
+import CardList from './components/CardList'
 
 //create app element
 const app = document.querySelector('#app')
@@ -11,12 +13,13 @@ const searchGit = () => {
     const searchInput = document.querySelector('#search')
     logic.search(searchInput.value)
         .then(res => {
-            console.log(res)
+            const cardList = new CardList(res)
+            const userList = cardList.render()
+            app.appendChild(userList)
         })
-}
-
-const test = () => {
-    console.log('hello test')
+        .catch(error => {
+            console.error(error.message)
+        })
 }
 
 // add new search bar
