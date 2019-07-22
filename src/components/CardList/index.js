@@ -7,15 +7,22 @@ class CardList {
         this.list = userList
     }
 
-    container = document.createElement('div')
-
     render() {
+        let userList
+        if (document.querySelector('.userList')) {
+            const userList = document.querySelector('.userList')
+            userList.parentNode.removeChild(userList)
+        }
+
+        userList = document.createElement('div')
+        userList.classList.add('userList')
+
         this.list.forEach(({ login }) => {
             let card = new Card(login)
-            this.container.appendChild(card)
+            userList.appendChild(card)
         })
 
-        return this.container
+        return userList
     }
 }
 
