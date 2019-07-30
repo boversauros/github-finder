@@ -1,0 +1,13 @@
+.search-bar {
+    margin-top: 2rem;
+    display: flex;
+    padding: 0.75rem;
+    background: white;
+    box-shadow: 1px 3px 3px 1px rgba(163,163,163,1);
+
+    input {
+        flex: 2;
+        margin-right: 1rem;
+        border: none;
+    }
+}
