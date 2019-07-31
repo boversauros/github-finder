@@ -1,6 +1,7 @@
 'use strict'
 
 import Card from '../Card'
+import './index.scss'
 
 class CardList {
     constructor(userList) {
@@ -14,11 +15,11 @@ class CardList {
             userList.parentNode.removeChild(userList)
         }
 
-        userList = document.createElement('div')
-        userList.classList.add('userList')
-
-        this.list.forEach(({ login }) => {
-            let card = new Card(login)
+        userList = document.createElement('section')
+        userList.classList.add('user-list')
+        console.log(this.list)
+        this.list.forEach(({ login, avatar_url }) => {
+            let card = new Card({user: login, img: avatar_url })
             userList.appendChild(card)
         })
 
