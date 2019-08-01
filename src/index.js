@@ -5,12 +5,20 @@ import logic from './logic'
 import SearchBar from './components/SearchBar'
 import CardList from './components/CardList'
 
+// styles
+import './assets/scss/app.scss'
+
 //create app element
 const app = document.querySelector('#app')
 
 //create logic search function
 const searchGit = () => {
     const searchInput = document.querySelector('#search')
+    if (searchInput.value.length === 0) {
+        const cardList = new CardList([])
+        return cardList.render()
+    }
+
     logic.search(searchInput.value)
         .then(res => {
             const cardList = new CardList(res)

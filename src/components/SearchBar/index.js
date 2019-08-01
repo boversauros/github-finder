@@ -1,5 +1,7 @@
 'use strict'
 import Button from '../Button'
+import Select from '../Select'
+import './index.scss'
 
 class SearchBar {
     constructor(func) {
@@ -7,6 +9,8 @@ class SearchBar {
     }
 
     searchButton = new Button('search')
+    searchSelect = new Select([{ text: 'users', value: 1 },{ text: 'repos', value: 2 }])
+
     searchResults = []
 
     render() {
@@ -17,8 +21,11 @@ class SearchBar {
         searchinput.setAttribute('placeholder', 'Search...')
         searchinput.setAttribute('id', 'search')
 
+
         const SearchBar = document.createElement('div')
+        SearchBar.classList.add('search-bar')
         SearchBar.appendChild(searchinput)
+        SearchBar.appendChild(this.searchSelect)
         SearchBar.appendChild(this.searchButton)
 
         return SearchBar

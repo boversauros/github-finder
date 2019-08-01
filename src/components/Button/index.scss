@@ -1,7 +1,10 @@
 .button {
-    padding: 0.1rem 0.5rem;
-    color: white;
-    background-color: tomato;
-    border-color: tomato;
-    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: none;
+
+    &:hover {
+        background-color: #313332;
+        color: white;
+    }
 }
